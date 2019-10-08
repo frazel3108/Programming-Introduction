@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{ 
+    double a,b; 
+       
+    cout << "Enter numbers a and b : " << endl;
+    cin >>a>>b;
+    
+    cout << "Arithmetic mean : " << (a+b)/2 << endl;
+     return 0; 
+}
