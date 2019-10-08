@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{ 
+    double a,b; 
+       
+    cout << "Enter numbers a and b : " << endl;
+    cin >>a>>b;
+    do {
+    if (a>0 && b>0) {
+    cout << "S= " << a*b << endl;
+    cout << "P= " << 2*(a+b);
+    break;
+    } else {
+        cout << "Incorrect data!" << endl;
+    }
+    }while(true);
+     return 0; 
+}
