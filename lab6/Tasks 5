@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int y;
+
+	cout << "Введите номер года : " << endl;
+
+	cin >> y;
+
+	cout << "Это год " << (y - 1) / 100 + 1 << " столетия." << endl;
+
+	cout << endl;
+
+	system("pause");
+
+	return 0;
+
+}
