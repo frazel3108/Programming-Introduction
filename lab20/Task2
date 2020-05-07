@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	string line;
+	
+	do {
+		cout << "Введите строку S (English) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+
+	cout << "Результат : " << endl;
+	for (int i = 0; i < line.size(); i++) {
+		if (line[i] != ' ') {
+			cout << line[i] << ends;
+		}
+	}
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

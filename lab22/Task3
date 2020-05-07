@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+#include <cstring>
+#include <string.h>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	string way_1, way_2, file_1, file_2;
+
+	cout << "Введите путь к 1 файлу : ";
+	getline(cin, way_1);
+
+	cout << "Введите путь ко 2 файлу : ";
+	getline(cin, way_2);
+
+
+	ifstream out(way_1);
+	while (!out.eof()) {
+		getline(out, file_1);
+	}
+	out.close();
+
+	ifstream out_2(way_2);
+	while (!out_2.eof()) {
+		getline(out_2, file_2);
+	}
+	out_2.close();
+
+	ofstream in(way_1);
+	in << file_2 << " " << file_1;
+	in.close();
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

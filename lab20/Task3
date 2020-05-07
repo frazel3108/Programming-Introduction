@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int k = 0;
+	string line;
+
+	do {
+		cout << "Введите строку S (English) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	for (int i = 0; i < line.size(); i++) {
+		if (line[i]>='A' && line[i]<='Z') {
+			k++;
+		}
+	}
+
+	cout << "В строке содержатся " << k << " прописных латинских букв!" <<  endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

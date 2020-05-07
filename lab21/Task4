@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int count = 0;
+	string line;
+	char vowels[19] = { 'А','а','Е','е','Ё','ё','И','и','О','о','У','у','ы',
+		  'Э','э','Ю','ю','Я','я' };
+
+	do {
+		cout << "Введите строку S (Russian) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	for (int i = 0; i < line.size(); i++) {
+		for (int j = 0; j < 19; j++) {
+			if (line[i] == vowels[j]) {
+				count++;
+			}
+		}
+	}
+
+	cout << endl;
+	cout << "Количество содержащихся в строке гласных букв = " << count << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

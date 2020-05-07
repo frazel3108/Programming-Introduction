@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+#include <cstring>
+#include <string.h>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int position_1 = 0, position_2 = 0;
+
+	string line, name;
+
+	do {
+		cout << "Введите дирректорию файла (English) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	cout << endl;
+	cout << "Название последнего каталога : ";
+
+	if ((line.find('\\') != line.find_last_of('\\')) || (line.find('//') != line.find_last_of('//'))) {
+
+		position_1 = line.rfind('\\');
+		if (position_1 == 0) {
+			position_1 = line.rfind('//');
+		}
+
+		position_2 = line.rfind('\\', position_1-1)+1;
+		if (position_2 == 0) {
+			position_2 = line.rfind('//', position_1-1)+1;
+		}
+
+		while (position_2<position_1) {
+			name += line[position_2];
+			position_2++;
+		}
+
+		cout << name << endl;
+
+	} else {
+		cout << "\\" << endl;
+	}
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

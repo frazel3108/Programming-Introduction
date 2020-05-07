@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	char symbol_c;
+	string line;
+
+	do {
+		cout << "Введите строку S (English) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	do {
+		cout << "Введите символ C : ";
+		cin >> symbol_c;
+	} while (symbol_c == ' ');
+
+	for (int i = 0; i < line.size(); i++) {
+		if (line[i] == symbol_c) {
+			cout << line[i] << symbol_c;
+		} else {
+			cout << line[i];
+		}
+	}
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

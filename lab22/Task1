@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+#include <cstring>
+#include <string.h>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int position = 0;
+	string symbols,way;
+
+	cout << "Введите путь к файлу с символами : ";
+	getline(cin,way);
+
+	ifstream out(way);
+
+	while (!out.eof()) {
+		getline(out,symbols);
+	}
+	out.close();
+
+
+        position = symbols.find(' ')+1;
+
+	ofstream in(way);
+
+	for (int i = position; i < symbols.size(); i++) {
+		in << symbols[i];
+	}
+	in.close();
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

@@ -1,0 +1,85 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int n;
+	do {
+
+		cout << "Введите количество элементов массива N (N > 0) : ";
+		cin >> n;
+		cout << endl;
+
+	} while (n < 0);
+
+	int k;
+	do {
+
+		cout << "Введите номер серии K (K > 0) : ";
+		cin >> k;
+		cout << endl;
+
+	} while (k < 0);
+
+	int* array = new int[n];
+	int* array_1 = new int[n];
+
+	cout << "Введите элементы массива : ";
+
+	for (int i = 0; i < n; i++)
+		cin >> array[i];
+
+	int h = 1, ser_k = 1, l_k_ser = 0, end_ser;
+
+	if (k == 1) {
+		l_k_ser = 1;
+	}
+
+	for (int i = 1; i < n; i++) {
+		if (array[i] != array[i - 1]) {
+			h++;
+			if (h == k) {
+				ser_k = i;
+			}
+				end_ser = i;
+		}
+		if (h == k) {
+			l_k_ser++;
+		}
+	}
+
+	int b = 0;
+	for (int i = 0; i < ser_k; i++) {
+		array_1[b++] = array[i];
+	}
+
+	for (int i = end_ser; i < n; i++) {
+		array_1[b++] = array[i];
+	}
+
+	for (int i = ser_k + l_k_ser; i < end_ser; i++) {
+		array_1[b++] = array[i];
+	}
+
+	for (int i = ser_k; i < ser_k + l_k_ser; i++) {
+		array_1[b++] = array[i];
+	}
+
+	for (int i = 0; i < n; i++) {
+		array[i] = array_1[i];
+	}
+
+	cout << endl;
+	cout << "Результат : " << endl;
+
+	for (int i = 0; i < n; i++)
+		cout << array[i] << ends;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

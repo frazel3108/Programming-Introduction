@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	string line;
+	char first_character;
+
+	do {
+		cout << "Введите строку S (Russian), где все символы заглавные буквы! : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	for (int i = 0; i < line.size(); i++) {
+
+		if (i == 0 && line[i] != ' ') {
+			first_character = line[i];
+		} else if ((line[i] != ' ') && (line[i - 1] == ' ')) {
+			first_character = line[i];
+		} else if ((line[i] != ' ') && (line[i] == first_character)) {
+			line[i] = '.';
+		}
+	}
+
+	cout << endl;
+	cout << "Результат строки : " << line << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	char symbol;
+
+	cout << "Введите символ C : ";
+	cin >> symbol;
+
+	cout << endl;
+	cout << "Предыдущий символ : " << char(symbol - 1) << 
+		"\nСледующий символ : " << char(symbol + 1) << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

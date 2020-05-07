@@ -1,0 +1,72 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int n, l, k;
+
+	do {
+
+		cout << "Введите количество элементов массива N (N > 0) : ";
+		cin >> n;
+		cout << endl;
+
+	} while (n<0);
+
+	do {
+
+		cout << "Введите длину серии L (L > 0) : ";
+		cin >> l;
+		cout << endl;
+
+	} while (l < 0);
+
+	int* array = new int[n];
+
+	cout << "Введите элементы массива : ";
+
+	for (int i = 0; i < n; i++) 
+		cin >> array[i];
+
+	cout << endl;
+	cout << "Результат : " << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		k = 1;
+		for (int j = i + 1; j < n; j++)
+		{
+			if (array[j] == array[i]) 
+				k++;
+			else 
+				break;
+		}
+		if (k > l) {
+
+			i = i + k-1;
+
+			cout << "0" << ends; 
+
+		}
+		else 
+			cout << array[i] << ends; 
+	}
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}
+
+		else 
+			cout << array[i] << ends; 
+	}
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

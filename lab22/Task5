@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+#include <cstring>
+#include <string.h>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int count = 0;
+	char S;
+	string way, file;
+
+	cout << "Введите путь к файлу : ";
+	getline(cin, way);
+
+	ifstream out(way);
+	while (!out.eof()) {
+		getline(out, file);
+		if (file.substr(0, 5) == "     ") {
+			count++;
+		}
+	}
+	out.close();
+
+	cout << "В файле " << count << " абзацев." << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

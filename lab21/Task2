@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+#include <limits.h>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int word_length = INT_MAX, temp_word_length;
+	string line;
+
+	do {
+		cout << "Введите строку S (Russian) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	for (int i = 0; i < line.size(); i++) {
+		temp_word_length = 0;
+		if (line[i] != ' ') {
+			while (line[i] != ' ' && i < line.size()) {
+				temp_word_length++;
+				i++;
+			}
+			if (temp_word_length < word_length ) {
+				word_length = temp_word_length;
+			}
+		}
+	}
+
+	cout << endl;
+	cout << "Длина самого короткого слова в строке = " << word_length << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+# include <windows.h>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int count = 0;
+	string line;
+
+	do {
+		cout << "Введите строку S (Russian) : ";
+		getline(cin, line);
+	} while (line.empty());
+
+	for (int i = 0; i < line.size(); i++) {
+		if (line[i] != ' ') {
+			while (line[i] != ' ') {
+				i++;
+			}
+			count++;
+		}
+	}
+
+	cout << endl;
+	cout << "Kоличество cлов в строке равно " << count << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <windows.h>
+#include <cstring>
+#include <string.h>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int count = 0;
+	string way, file, m_file;
+
+	cout << "Введите путь к файлу : ";
+	getline(cin, way);
+
+	ifstream out(way);
+	while (!out.eof()) {
+		getline(out, file);
+	}
+	out.close();
+
+	m_file[0] = file[0];
+	for (int i = 1; i < file.size(); i++) {
+		if ((file[i] != ' ') || ((file[i] == ' ') &&
+				(file[i - 1] != ' '))) {
+			m_file += file[i];
+		}
+	}
+
+	ofstream in(way);
+	in << m_file << endl;
+	in.close();
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}

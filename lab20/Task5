@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int count = 0;
+	string line_s, line_s0;
+
+	do {
+		cout << "Введите строку S (English) : ";
+		getline(cin, line_s);
+	} while (line_s.empty());
+
+	do {
+		cout << "Введите строку S0 (English) : ";
+		getline(cin, line_s0);
+	} while (line_s0.empty());
+
+	for (int i = 0; i < line_s.size(); i++) {
+		if (line_s[i]==line_s0[0]) {
+			if (line_s.substr(i, line_s0.size()) == line_s0) {
+				count++;
+			}
+		}
+	}
+
+	cout << "Kоличество вхождений строки S0 в строку S равно " << count << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+
+}
